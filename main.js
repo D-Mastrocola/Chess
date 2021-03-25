@@ -26,10 +26,16 @@ let init = () => {
     ["ee", "ee", "ee", "ee", "ee", "ee", "ee", "ee"],
     ["ee", "ee", "ee", "ee", "ee", "ee", "ee", "ee"],
     ["ee", "ee", "ee", "ee", "ee", "ee", "ee", "ee"],
-    ["wP", "wP", "wP", "wP", "wP", "wP", "wP", "wPs"],
+    ["wP", "wP", "wP", "wP", "wP", "wP", "wP", "wP"],
     ["wR", "wN", "wB", "wQ", "wK", "wB", "wN", "wR"],
   ];
   window.requestAnimationFrame(gameLoop);
+  canvas.addEventListener('click', function(e){
+    let x = Math.floor((e.clientX - canvas.offsetLeft) / tileSize);
+    let y = Math.floor((e.clientY - canvas.offsetTop) / tileSize);
+    board.selected = board.boardArray[y][x];
+    console.log(board.selected)
+}, false);
 };
 
 //---------------------------------

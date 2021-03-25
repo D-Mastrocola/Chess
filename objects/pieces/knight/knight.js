@@ -11,6 +11,10 @@ class Knight {
     } else {
       this.sprite.src = "./objects/pieces/knight/blackKnight.png";
     }
+
+    this.moveList = {
+      
+    };
   }
   update() {}
   draw(ctx) {

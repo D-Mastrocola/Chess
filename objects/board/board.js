@@ -7,17 +7,26 @@ import King from "../pieces/king/king.js";
 
 class Board {
   constructor(whiteSquare, blackSquare, tileSize) {
+    this.turn = "w";
     this.whiteSquare = whiteSquare;
     this.blackSquare = blackSquare;
     this.tileSize = tileSize;
+    this.selected = '--';
     this.boardString = [
       ["bR", "bN", "bB", "bQ", "bK", "bB", "bN", "bR"],
+
       ["bP", "bP", "bP", "bP", "bP", "bP", "bP", "bP"],
+
       ["--", "--", "--", "--", "--", "--", "--", "--"],
+
       ["--", "--", "--", "--", "--", "--", "--", "--"],
+
       ["--", "--", "--", "--", "--", "--", "--", "--"],
+
       ["--", "--", "--", "--", "--", "--", "--", "--"],
-      ["wP", "wP", "wP", "wP", "wPs", "wP", "wP", "wP"],
+
+      ["wP", "wP", "wP", "wP", "wP", "wP", "wP", "wP"],
+
       ["wR", "wN", "wB", "wQ", "wK", "wB", "wN", "wR"],
     ];
     this.boardArray = [[], [], [], [], [], [], [], []];
@@ -27,15 +36,7 @@ class Board {
     for (let i = 0; i < this.boardString.length; i++) {
       for (let j = 0; j < this.boardString[i].length; j++) {
         let piece = "--";
-        if (this.boardString[i][j] === "wPs") {
-          piece = new Pawn(
-            j * this.tileSize,
-            i * this.tileSize,
-            this.tileSize,
-            "w",
-            true
-          );
-        } else if (this.boardString[i][j] === "wP") {
+        if (this.boardString[i][j] === "wP") {
           piece = new Pawn(
             j * this.tileSize,
             i * this.tileSize,
@@ -157,6 +158,7 @@ class Board {
         }
       }
     }
+    if(this.selected !== '--') this.selected.showMoves(ctx);
   }
 }
 export default Board;
