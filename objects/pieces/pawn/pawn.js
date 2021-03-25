@@ -39,14 +39,15 @@ class Pawn {
   showMoves(ctx) {
     ctx.fillStyle = "rgba(0, 0, 0, 0.4)";
     ctx.fillRect(this.x, this.y, this.size, this.size);
-    ctx.fillStyle = "rgba(0, 0, 0, 0.8)";
+    ctx.fillStyle = "rgba(50, 50, 50, 0.7)";
+    //Forward one
     ctx.fillRect(
       this.x + this.moveList.moves.forward[0],
       this.y + this.moveList.moves.forward[1],
       this.size,
       this.size
     );
-
+    //Forward two
     if (this.firstMove)
       ctx.fillRect(
         this.x + this.moveList.moves.forwardTwo[0],
