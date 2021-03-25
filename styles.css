@@ -1,0 +1,29 @@
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+.js-image {
+  display: none;
+}
+header {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  height: 80px;
+  width: 100%;
+  background-color: #444;
+  padding: 0 1em;
+  color: #fff;
+}
+main {
+    padding-top: 80px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
