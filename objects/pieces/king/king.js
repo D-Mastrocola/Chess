@@ -12,6 +12,7 @@ class King {
       this.sprite.src = "./objects/pieces/king/blackKing.png";
     }
   }
+  showMoves(ctx) {}
   update() {}
   draw(ctx) {
     if (this.state === "alive") {
